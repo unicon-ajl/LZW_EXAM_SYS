@@ -37,7 +37,7 @@
 * 文档教程：[https://www.mindskip.net:999](https://www.mindskip.net:999)
 * 视频教程：[https://ke.qq.com/course/3614230](https://ke.qq.com/course/3614230)
 * QQ交流群17：`450704712` -->
-* 商务QQ：`2290501132`
+* QQ：`2290501132`
 <!-- * 商务微信：`mind_skip` -->
 <!-- * 商务邮箱：`mindskip@qq.com` -->
 

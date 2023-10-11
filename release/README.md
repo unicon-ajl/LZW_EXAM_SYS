@@ -14,7 +14,7 @@ npm run build
 * 将文件放到\source\xzs\src\main\resources\static下，然后将java程序打包成jar包
 * 修改application-prod.yml中的datasource地址
 * 数据库账号密码设置为：root/123456
-* 数据库脚本领取地址：[https://www.mindskip.net:999](https://www.mindskip.net:999)
+<!-- * 数据库脚本领取地址：[https://www.mindskip.net:999](https://www.mindskip.net:999) -->
 * 创建数据库xzs，导入数据库脚本
 * 学生端访问地址为：<http://ip:8000/student>
 * 管理员端访问地址为：<http://ip:8000/admin>
@@ -49,8 +49,9 @@ server {
 
 ### docker部署
 
-* 打开网站<https://gitee.com/mindskip/xzs-mysql>，找到docker目录，里面有已配置好的文件
-* 下载sql脚本，下载教程<https://www.mindskip.net:999>，然后解压sql压缩包，找到xzs-mysql.sql文件，编辑此文件，在文件开头加如下代码：
+* 打开网站<https://gitee.com/fallen-leaves-mourn/exam>，找到docker目录，里面有已配置好的文件
+* 下载sql脚本，然后解压sql压缩包，找到xzs-mysql.sql文件，编辑此文件，在文件开头加如下代码：
+<!-- * 下载教程<https://www.mindskip.net:999> -->
 
 ```xzs-mysql
 CREATE DATABASE `xzs` CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -68,7 +69,7 @@ chmod +x  /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-* 执行下面命令，启动学之思网站，有问题可以看下/usr/local/xzs/log中的日志
+* 执行下面命令，启动网站，有问题可以看下/usr/local/xzs/log中的日志
 
 ```docker-xzs
 cd /usr/local/xzs
