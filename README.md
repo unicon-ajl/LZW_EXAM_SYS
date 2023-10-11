@@ -2,51 +2,54 @@
 <p></p>
 
 <p align="center">
-<a href="https://www.mindskip.net" target="_blank">
+<!-- <a href="https://www.mindskip.net" target="_blank">
  <img src="https://www.mindskip.net/style/git/images/logo/1.png" height="80"/>
-<a/>
+<a/> -->
 </p>
 
 <div align="center">
 
-[![Gitee star](https://gitee.com/mindskip/xzs-mysql/badge/star.svg?theme=gitee)](https://gitee.com/mindskip/xzs-mysql)
+<!-- [![Gitee star](https://gitee.com/mindskip/xzs-mysql/badge/star.svg?theme=gitee)](https://gitee.com/mindskip/xzs-mysql)
 [![Gitee fork](https://gitee.com/mindskip/xzs-mysql/badge/fork.svg?theme=gitee)](https://gitee.com/mindskip/xzs-mysql)
 [![Github stars](https://img.shields.io/github/stars/mindskip/xzs-mysql?logo=github)](https://github.com/mindskip/xzs-mysql)
 [![Github forks](https://img.shields.io/github/forks/mindskip/xzs-mysql?logo=github)](https://github.com/mindskip/xzs-mysql)
-[![Github license](https://img.shields.io/badge/license-AGPL-yellow)](https://gitee.com/mindskip/xzs-mysql/blob/master/LICENSE)
+[![Github license](https://img.shields.io/badge/license-AGPL-yellow)](https://gitee.com/mindskip/xzs-mysql/blob/master/LICENSE) -->
 
 </div>
 
-# 学之思开源考试系统 - Mysql版
+# 开源考试系统 - Mysql版
 
 ## 项目介绍
 
-学之思开源考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷、界面设计友好、代码结构清晰。支持web端和微信小程序，能覆盖到pc机和手机等设备。
+开源考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷、界面设计友好、代码结构清晰。支持web端和微信小程序，能覆盖到pc机和手机等设备。
 支持多种部署方式：集成部署、前后端分离部署、docker部署。
 
 ### 演示地址
 
-* 官网：[https://www.mindskip.net](https://www.mindskip.net)
-* 学之思开源考试系统：[https://www.mindskip.net/xzs.html](https://www.mindskip.net/xzs.html)
+<!-- * 官网：[https://www.mindskip.net](https://www.mindskip.net) -->
+<!-- * 开源考试系统：[https://www.mindskip.net/xzs.html](https://www.mindskip.net/xzs.html)
 * 维多多培训考试系统：[https://www.mindskip.net/wdd.html](https://www.mindskip.net/wdd.html)
-* 思多多智能考试系统：[https://www.mindskip.net/sdd.html](https://www.mindskip.net/sdd.html)
+* 思多多智能考试系统：[https://www.mindskip.net/sdd.html](https://www.mindskip.net/sdd.html) -->
 
 ### 文档视频教程
 
-* 数据库脚本下载地址：[https://www.mindskip.net:999](https://www.mindskip.net:999)
+<!-- * 数据库脚本下载地址：[https://www.mindskip.net:999](https://www.mindskip.net:999)
 * 文档教程：[https://www.mindskip.net:999](https://www.mindskip.net:999)
 * 视频教程：[https://ke.qq.com/course/3614230](https://ke.qq.com/course/3614230)
-* QQ交流群17：`450704712`
-* 商务QQ：`2732007709`
-* 商务微信：`mind_skip`
-* 商务邮箱：`mindskip@qq.com`
+* QQ交流群17：`450704712` -->
+* 商务QQ：`2290501132`
+<!-- * 商务微信：`mind_skip` -->
+<!-- * 商务邮箱：`mindskip@qq.com` -->
 
-### 学之思仓库版本地址
+### 仓库版本地址
 
-* gitee - postgresql ：[https://gitee.com/mindskip/uexam](https://gitee.com/mindskip/uexam)
+
+* gitee - mysql ：[https://gitee.com/fallen-leaves-mourn/exam](https://gitee.com/fallen-leaves-mourn/exam)
+
+<!-- * gitee - postgresql ：[https://gitee.com/mindskip/uexam](https://gitee.com/mindskip/uexam)
 * gitee - mysql ：[https://gitee.com/mindskip/xzs-mysql](https://gitee.com/mindskip/xzs-mysql)
 * github - postgresql ：[https://github.com/mindskip/xzs](https://github.com/mindskip/xzs)
-* github - mysql ：[https://github.com/mindskip/xzs-mysql](https://github.com/mindskip/xzs-mysql)
+* github - mysql ：[https://github.com/mindskip/xzs-mysql](https://github.com/mindskip/xzs-mysql) -->
 
 
 
@@ -109,15 +112,15 @@
 ### 系统展示
 
 * 学生考试系统
-<table>
+<!-- <table>
     <tr>
         <td><img src="https://www.mindskip.net/style/git/images/student/1.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/student/2.png"/></td>
     </tr>
-</table>
+</table> -->
 
 *  小程序考试系统
-<table>
+<!-- <table>
     <tr>
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/1.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/2.png"/></td>
@@ -130,13 +133,13 @@
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/6.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/7.png"/></td>
     </tr>
-</table>
+</table> -->
 
 * 后台管理系统
 
-<table>
+<!-- <table>
     <tr>
         <td><img src="https://www.mindskip.net/style/git/images/admin/1.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/admin/2.png"/></td>
     </tr>
-</table>
+</table> -->
