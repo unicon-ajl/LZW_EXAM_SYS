@@ -1,6 +1,8 @@
 package com.mindskip.xzs.configuration.property;
 
+//import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -8,9 +10,10 @@ import java.util.List;
 /**
  * @version 3.5.0
  * @description: The type System config.
- * Copyright (C), 2020-2021, 武汉思维跳跃科技有限公司
+ * Copyright (C), 2020-2021, 龙之舞
  * @date 2021/12/25 9:45
  */
+@Component
 @ConfigurationProperties(prefix = "system")
 public class SystemConfig {
 
@@ -18,6 +21,13 @@ public class SystemConfig {
     private List<String> securityIgnoreUrls;
     private WxConfig wx;
     private QnConfig qn;
+
+//    @Value("${local.storage.path:D:/design-Item/xzs在线考试系统/xzs-mysql/source/uploads}")
+//    private String localStoragePath;
+//
+//    public String getLocalStoragePath() {
+//        return localStoragePath;
+//    }
 
     /**
      * Gets pwd key.

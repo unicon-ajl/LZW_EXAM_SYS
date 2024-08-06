@@ -22,6 +22,9 @@ mybatis:
 
 
 system:
+#  local:
+#    storage:
+#      path: D:/design-Item/xzs在线考试系统/xzs-mysql/source/uploads
   security-ignore-urls:
     - /api/wx/**
     - /api/admin/upload/configAndUpload

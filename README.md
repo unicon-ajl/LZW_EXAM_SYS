@@ -8,8 +8,6 @@
 开源考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷、界面设计友好、代码结构清晰。支持web端和微信小程序，能覆盖到pc机和手机等设备。
 支持多种部署方式：集成部署、前后端分离部署、docker部署。
 
-* QQ：`2290501132`
-
 ### 仓库版本地址
 
 
@@ -22,7 +20,7 @@
 
 |  环境   | 版本  |
 |  ----  | ----  |
-| 操作系统  | Windows / Linux  |  
+| 操作系统  | Windows |  
 | NodeJs  | 14  |  
 | Jdk  | 1.8  |  
 | Mysql  | 8.0  |
@@ -42,14 +40,14 @@
 * 打开application-dev.yml文件中，配置好mysql的服务地址
 * 去七牛云官网申请好对象存储账号，修改application.yml中的qn相关的配置，七牛云主要用于文件存储(为了节约成本，我们这里使用本地存储，可忽略)
 * 启动后台程序,默认端口为8000
-* 学生系统地址：http://ip:8000/student
-* 管理端地址：http://ip:8000/admin
+* 学生系统地址：http://ip:8001/student
+* 管理端地址：http://ip:8002/admin
 
 
 ### 前端开发
 
 * 前端使用 vscode，分别打开文件夹打开源代码source\vue\xzs-student和source\vue\xzs-admin
-* 在终端执行下面命令，安装node_module：
+* 在终端执行下面命令，安装node_modules：
 <!-- 安装依赖，即 node_module 文件夹 -->
 > npm i
 

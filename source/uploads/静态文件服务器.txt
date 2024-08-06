@@ -1,0 +1,3 @@
+启动静态文件服务器
+命令行（cmd）：
+	python -m http.server 8888 --directory D:/design-Item/xzs_online_exam_sys/xzs-mysql/source/uploads

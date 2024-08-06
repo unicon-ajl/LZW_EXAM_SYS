@@ -3,8 +3,10 @@ package com.mindskip.xzs.viewmodel.student.user;
 import com.mindskip.xzs.domain.User;
 import com.mindskip.xzs.utility.DateTimeUtil;
 import com.mindskip.xzs.viewmodel.BaseVM;
+import org.springframework.stereotype.Component;
 
 
+@Component
 public class UserResponseVM extends BaseVM {
 
     private Integer id;
@@ -37,12 +39,24 @@ public class UserResponseVM extends BaseVM {
 
     private String imagePath;
 
+
+//    public static @Value("${file.upload-dir}") String uploadDirectory; // 注入 file.upload-dir 配置
+
     public static UserResponseVM from(User user) {
         UserResponseVM vm = modelMapper.map(user, UserResponseVM.class);
         vm.setBirthDay(DateTimeUtil.dateFormat(user.getBirthDay()));
         vm.setLastActiveTime(DateTimeUtil.dateFormat(user.getLastActiveTime()));
         vm.setCreateTime(DateTimeUtil.dateFormat(user.getCreateTime()));
         vm.setModifyTime(DateTimeUtil.dateFormat(user.getModifyTime()));
+
+        String uploadDirectory = ConfigLoader.getUploadDir("visit");
+        System.out.println(uploadDirectory);
+        if(uploadDirectory != null){
+            // 设置完整的图像路径    uploadDirectory好像为null
+            String completeImagePath = uploadDirectory + user.getImagePath();
+            vm.setImagePath(completeImagePath);
+        }
+
         return vm;
     }
 
@@ -158,8 +172,9 @@ public class UserResponseVM extends BaseVM {
         this.userLevel = userLevel;
     }
 
+
     public String getImagePath() {
-        return imagePath;
+        return  imagePath;
     }
 
     public void setImagePath(String imagePath) {

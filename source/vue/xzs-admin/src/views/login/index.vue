@@ -1,6 +1,13 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
+    <el-form
+      ref="loginForm"
+      :model="loginForm"
+      :rules="loginRules"
+      class="login-form"
+      auto-complete="on"
+      label-position="left"
+    >
 
       <div class="title-container">
         <h3 class="title">龙之舞管理系统</h3>
@@ -21,7 +28,12 @@
         />
       </el-form-item>
 
-      <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
+      <el-tooltip
+        v-model="capsTooltip"
+        content="Caps lock is On"
+        placement="right"
+        manual
+      >
         <el-form-item prop="password">
           <span class="svg-container">
             <svg-icon icon-class="password" />
@@ -39,133 +51,154 @@
             @blur="capsTooltip = false"
             @keyup.enter.native="handleLogin"
           />
-          <span class="show-pwd" @click="showPwd">
+          <span
+            class="show-pwd"
+            @click="showPwd"
+          >
             <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
           </span>
         </el-form-item>
       </el-tooltip>
 
-      <el-checkbox v-model="loginForm.remember" style="margin-bottom: 20px;margin-left: 5px;">记住密码</el-checkbox>
+      <el-checkbox
+        v-model="loginForm.remember"
+        style="margin-bottom: 20px;margin-left: 5px;"
+      >记住密码</el-checkbox>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+      <el-button
+        :loading="loading"
+        type="primary"
+        style="width:100%;margin-bottom:30px;"
+        @click.native.prevent="handleLogin"
+      >登录</el-button>
 
     </el-form>
 
     <div class="account-foot-copyright">
-      <span>Copyright ©2019-2023 武汉思维跳跃科技有限公司 版权所有</span>
+      <span>Copyright ©2024-至今 龙之舞 版权所有</span>
     </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-import loginApi from '@/api/login'
+import { mapMutations } from "vuex";
+import loginApi from "@/api/login";
 
 export default {
-  name: 'Login',
-  data () {
+  name: "Login",
+  data() {
     const validateUsername = (rule, value, callback) => {
       if (value.length < 5) {
-        callback(new Error('用户名不能少于5个字符'))
+        callback(new Error("用户名不能少于5个字符"));
       } else {
-        callback()
+        callback();
       }
-    }
+    };
     const validatePassword = (rule, value, callback) => {
       if (value.length < 5) {
-        callback(new Error('密码不能少于5个字符'))
+        callback(new Error("密码不能少于5个字符"));
       } else {
-        callback()
+        callback();
       }
-    }
+    };
     return {
       loginForm: {
-        userName: '',
-        password: '',
-        remember: false
+        userName: "",
+        password: "",
+        remember: false,
       },
       loginRules: {
-        userName: [{ required: true, trigger: 'blur', validator: validateUsername }],
-        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+        userName: [
+          { required: true, trigger: "blur", validator: validateUsername },
+        ],
+        password: [
+          { required: true, trigger: "blur", validator: validatePassword },
+        ],
       },
-      passwordType: 'password',
+      passwordType: "password",
       capsTooltip: false,
       loading: false,
-      showDialog: false
-    }
+      showDialog: false,
+    };
   },
-  created () {
+  created() {
     // window.addEventListener('storage', this.afterQRScan)
   },
-  mounted () {
-    if (this.loginForm.userName === '') {
-      this.$refs.userName.focus()
-    } else if (this.loginForm.password === '') {
-      this.$refs.password.focus()
+  mounted() {
+    if (this.loginForm.userName === "") {
+      this.$refs.userName.focus();
+    } else if (this.loginForm.password === "") {
+      this.$refs.password.focus();
     }
   },
-  destroyed () {
+  destroyed() {
     // window.removeEventListener('storage', this.afterQRScan)
   },
   methods: {
-    checkCapslock ({ shiftKey, key } = {}) {
+    checkCapslock({ shiftKey, key } = {}) {
       if (key && key.length === 1) {
         // eslint-disable-next-line no-mixed-operators
-        if (shiftKey && (key >= 'a' && key <= 'z') || !shiftKey && (key >= 'A' && key <= 'Z')) {
-          this.capsTooltip = true
+        if (
+          (shiftKey && key >= "a" && key <= "z") ||
+          (!shiftKey && key >= "A" && key <= "Z")
+        ) {
+          this.capsTooltip = true;
         } else {
-          this.capsTooltip = false
+          this.capsTooltip = false;
         }
       }
-      if (key === 'CapsLock' && this.capsTooltip === true) {
-        this.capsTooltip = false
+      if (key === "CapsLock" && this.capsTooltip === true) {
+        this.capsTooltip = false;
       }
     },
-    showPwd () {
-      if (this.passwordType === 'password') {
-        this.passwordType = ''
+    showPwd() {
+      if (this.passwordType === "password") {
+        this.passwordType = "";
       } else {
-        this.passwordType = 'password'
+        this.passwordType = "password";
       }
       this.$nextTick(() => {
-        this.$refs.password.focus()
-      })
+        this.$refs.password.focus();
+      });
     },
-    handleLogin () {
-      let _this = this
-      this.$refs.loginForm.validate(valid => {
+    handleLogin() {
+      let _this = this;
+      this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          this.loading = true
-          loginApi.login(this.loginForm).then(function (result) {
-            if (result && result.code === 1) {
-              _this.setUserName(_this.loginForm.userName)
-              _this.$router.push({ path: '/' })
-            } else {
-              _this.loading = false
-              _this.$message({
-                message: result.message,
-                type: 'error'
-              })
-            }
-          }).catch(function (reason) {
-            _this.loading = false
-          })
+          this.loading = true;
+          loginApi
+            .login(this.loginForm)
+            .then(function (result) {
+              if (result && result.code === 1) {
+                _this.setUserName(_this.loginForm.userName);
+                _this.$router.push({ path: "/" });
+              } else {
+                _this.loading = false;
+                _this.$message({
+                  message: result.message,
+                  type: "error",
+                });
+              }
+            })
+            .catch(function (reason) {
+              _this.loading = false;
+            });
         } else {
-          return false
+          return false;
         }
-      })
+      });
     },
-    ...mapMutations('user', ['setUserName'])
-  }
-}
+    ...mapMutations("user", ["setUserName"]),
+  },
+};
 </script>
 
 <style lang="scss">
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
-$bg:#283443;
-$light_gray:#fff;
+$bg: #283443;
+$light_gray: #fff;
 $cursor: #fff;
 
 @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
@@ -208,9 +241,9 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$bg:#2d3a4b;
-$dark_gray:#889aa4;
-$light_gray:#eee;
+$bg: #2d3a4b;
+$dark_gray: #889aa4;
+$light_gray: #eee;
 
 .login-container {
   min-height: 100%;
@@ -222,10 +255,10 @@ $light_gray:#eee;
     position: relative;
     width: 520px;
     max-width: 100%;
-    padding:30px 50px 10px 50px;
-    margin:120px auto auto auto;
+    padding: 30px 50px 10px 50px;
+    margin: 120px auto auto auto;
     overflow: hidden;
-    background: rgba(252, 254, 255, 0.11)
+    background: rgba(252, 254, 255, 0.11);
   }
 
   .tips {

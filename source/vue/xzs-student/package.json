@@ -1,8 +1,8 @@
 {
   "name": "xzs-student",
   "version": "3.9.0",
-  "author": "武汉思维跳跃科技有限公司",
-  "description": "学之思开源考试系统",
+  "author": "龙之舞",
+  "description": "龙之舞开源考试系统",
   "license": "AGPL-3.0",
   "private": true,
   "homepage": "https://www.mindskip.net/xzs.html",
@@ -53,6 +53,7 @@
     "@vue/cli-plugin-router": "^4.5.19",
     "@vue/cli-plugin-vuex": "^4.5.19",
     "@vue/cli-service": "^4.5.19",
+    "@vue/eslint-config-prettier": "^3.0.5",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
